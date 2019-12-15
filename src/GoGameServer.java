@@ -1,7 +1,5 @@
 import java.net.ServerSocket;
 import java.util.concurrent.Executors;
-
-
 public class GoGameServer {
 
     public static void main(String[] args) throws Exception {
