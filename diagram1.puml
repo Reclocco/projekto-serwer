@@ -1,0 +1,24 @@
+@startuml
+actor student1
+actor student2
+
+server -> gameLogic ** : create gameLogic
+
+student1 -> client1 ** : start game
+client1 -> server: connection request
+server -> gameLogic: set client1 as B
+
+student2 -> client2 ** : start game
+client2 -> server: connection request
+server -> gameLogic: set client2 as W
+
+loop
+student1 -> client1: some action
+client1 -> server: process move if its his turn
+server -> client1: give according feedback to update gui
+
+student2 -> client2: some action
+client2 -> server: process move if its his turn
+server -> client2: give according feedback to update gui
+end
+@enduml

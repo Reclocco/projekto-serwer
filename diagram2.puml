@@ -1,0 +1,15 @@
+@startuml
+
+class GoGameClient
+class Game
+class GoGameServer
+class GUI
+class Player
+
+GoGameClient "1" *-- "1" GUI
+GoGameServer "1" *-- "1" Game
+
+Game "1" *-- "many" Player
+GoGameClient "1"--"2" GoGameServer
+
+@enduml
